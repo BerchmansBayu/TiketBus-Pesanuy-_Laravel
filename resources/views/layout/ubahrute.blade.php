@@ -50,17 +50,17 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
+        <li>
         <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-
 <a href="{{ route('actionlogout') }}"
    onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">
-    Logout
+             <i class="ri-logout-circle-line"></i>
+    <span>Logout</span>
 </a>
-        </li>
+</li>
     </ul>
 </div>
 
@@ -80,27 +80,28 @@
             <div class="table_container">
                 
                 
-            @foreach($rute as $route)
-                <form action="/updatedata1/{{$route->id_rute}}" method="post">
+            <div class="form-container"> 
+            <div class="col-sm-12"> 
+                <form action="/updatedata1/{{$rute->id_rute}}" method="post">
             @csrf
                     <table>
                         <tr>			
                             <td>Tanggal Berangkat</td>
                             <td>
-                                <input type="date" name="tanggal_berangkat" value="{{ $route->tanggal_berangkat }}">
+                                <input type="date" name="tanggal_berangkat" value="{{ $rute->tanggal_berangkat }}">
                             </td>
                         </tr>
                         <tr>			
                             <td>Tanggal Tiba</td>
-                            <td><input type="date" name="tanggal_tiba" value="{{ $route->tanggal_tiba }}"></td>
+                            <td><input type="date" name="tanggal_tiba" value="{{ $rute->tanggal_tiba }}"></td>
                         </tr>
                         <tr>			
                             <td>Waktu Berangkat</td>
-                            <td><input type="text" name="waktu_berangkat" value="{{ $route->waktu_berangkat }}"></td>
+                            <td><input type="text" name="waktu_berangkat" value="{{ $rute->waktu_berangkat }}"></td>
                         </tr>
                         <tr>			
                             <td>Waktu Tiba</td>
-                            <td><input type="text" name="waktu_tiba" value="{{ $route->waktu_tiba }}"></td>
+                            <td><input type="text" name="waktu_tiba" value="{{ $rute->waktu_tiba }}"></td>
                         </tr>
                         <tr>			
                             <td>Asal</td>
@@ -108,7 +109,7 @@
                                 <select name="id_terminal">
                                     <option disabled selected>Pilih</option>
                                     @foreach($terminal as $terminal)
-                                    <option value="{{ $terminal->id_terminal }}" {{ $route->id_terminal == $terminal->id_terminal ? 'selected' : '' }}>{{ $terminal->nama_terminal }}</option>
+                                    <option value="{{ $terminal->id_terminal }}" {{ $rute->id_terminal == $terminal->id_terminal ? 'selected' : '' }}>{{ $terminal->nama_terminal }}</option>
                                     @endforeach
                                 </select>
                             </td>
@@ -119,22 +120,24 @@
                                 <select name="id_bus">
                                     <option disabled selected>Pilih</option>
                                     @foreach($bus as $bus)
-                                    <option value="{{ $bus->id_bus }}" {{ $route->id_bus == $bus->id_bus ? 'selected' : '' }}>{{ $bus->nama_bus }}</option>
+                                    <option value="{{ $bus->id_bus }}" {{ $rute->id_bus == $bus->id_bus ? 'selected' : '' }}>{{ $bus->nama_bus }}</option>
                                     @endforeach
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>Harga</td>
-                            <td><input type="text" name="harga" value="{{ $route->harga }}"></td>
+                            <td><input type="text" name="harga" value="{{ $rute->harga }}"></td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="UBAH DATA"></td>
+                            <td><input type="submit" value="UBAH DATA" class="btn-minimalist-blue"></td>
                         </tr>		
                     </table>
                 </form>
-                @endforeach
+                </div>
+                </div>
+                
             </div>
         </div>
     </div>

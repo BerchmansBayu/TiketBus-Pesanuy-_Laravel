@@ -78,7 +78,18 @@ class RutesController extends Controller
  
     }
 
-    
+    public function eksporrute()
+    {
+    	// mengambil data dari table pegawai
+        $rute = Rute::with('Bus')->get();
+        $rute = Rute::with('Terminal')->get();
+        view()->share('rute',$rute);
+        $pdf = PDF::loadview('layout/datarute-pdf');
+        return $pdf->download('rute.pdf');
+    	// mengirim data pegawai ke view index
+    	
+ 
+    }
     public function deleteAll2()
     {
     	// mengambil data dari table pegawai

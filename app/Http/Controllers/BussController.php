@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Bus;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class BussController extends Controller
 {
@@ -83,5 +84,15 @@ class BussController extends Controller
  
     }
 
-  
+    public function eksporbus()
+    {
+    	// mengambil data dari table pegawai
+        $bus = Bus::all();
+        view()->share('bus',$bus);
+        $pdf = PDF::loadview('layout/databus-pdf');
+        return $pdf->download('bus.pdf');
+    	// mengirim data pegawai ke view index
+    	
+ 
+    }
 }

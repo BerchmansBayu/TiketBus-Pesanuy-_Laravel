@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Terminal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class TerminalsController extends Controller
 {
@@ -69,6 +70,19 @@ class TerminalsController extends Controller
         
     	// mengirim data pegawai ke view index
     	return redirect()->route('terminal');
+ 
+    }
+
+    public function eksporterminal()
+    {
+    	// mengambil data dari table pegawai
+        $terminal = Terminal::with('Pengguna')->get();
+        $terminal = Terminal::with('Rute')->get();
+        view()->share('terminal',$terminal);
+        $pdf = PDF::loadview('layout/dataterminal-pdf');
+        return $pdf->download('terminal.pdf');
+    	// mengirim data pegawai ke view index
+    	
  
     }
 }

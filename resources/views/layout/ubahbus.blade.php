@@ -50,17 +50,17 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
+        <li>
         <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-
 <a href="{{ route('actionlogout') }}"
    onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">
-    Logout
+             <i class="ri-logout-circle-line"></i>
+    <span>Logout</span>
 </a>
-        </li>
+</li>
     </ul>
 </div>
 
@@ -80,7 +80,8 @@
             <div class="table_container">
                 
                 
-            @foreach($bus as $bus)
+            <div class="form-container"> 
+            <div class="col-sm-12"> 
                 <form action="/updatedata2/{{$bus->id_bus}}" method="post">
             @csrf
                     <table>
@@ -99,11 +100,13 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="UBAH DATA"></td>
+                            <td><input type="submit" value="UBAH DATA" class="btn-minimalist-blue"></td>
                         </tr>
                     </table>
                 </form>
-                @endforeach
+                </div>
+                </div>
+                
             </div>
         </div>
     </div>

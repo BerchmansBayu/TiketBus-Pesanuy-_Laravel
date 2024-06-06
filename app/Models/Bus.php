@@ -11,4 +11,10 @@ class Bus extends Model {
     protected $dates = ['created_at'];
     protected $dates1 = ['updated_at'];
     protected $primaryKey = 'id_bus';
+
+    protected $fillable = [
+        'nama_bus',
+        'kelas',
+        'jumlah_kursi',
+    ];
 }

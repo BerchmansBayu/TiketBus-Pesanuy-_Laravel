@@ -47,7 +47,7 @@ Route::get('/ubahrute/{id_rute}', [RutesController::class, 'ubahrute'])->name('u
 Route::post('/updatedata1/{id_rute}', [RutesController::class, 'updatedata1'])->name('updatedata1');
 Route::get('/deleterute/{id_rute}', [RutesController::class, 'deleterute'])->name('deleterute');
 Route::get('/deleteAll2', [RutesController::class, 'deleteAll2'])->name('deleteAll2');
-
+Route::get('/eksporrute', [RutesController::class, 'eksporrute'])->name('eksporrute');
 
 Route::get('/pesanan', [PesanansController::class, 'index'])->name('pesanan');
 Route::get('/tambahpesanan', [PesanansController::class, 'tambahpesanan'])->name('tambahpesanan');
@@ -56,7 +56,7 @@ Route::get('/ubahpesanan/{id_pesanan}', [PesanansController::class, 'ubahpesanan
 Route::post('/updatedata/{id_pesanan}', [PesanansController::class, 'updatedata'])->name('updatedata');
 Route::get('/deletepesanan/{id_pesanan}', [PesanansController::class, 'deletepesanan'])->name('deletepesanan');
 Route::get('/deleteAll4', [PesanansController::class, 'deleteAll4'])->name('deleteAll4');
-
+Route::get('/eksporpesanan', [PesanansController::class, 'eksporpesanan'])->name('eksporpesanan');
 
 Route::get('/pengguna', [PenggunasController::class, 'index'])->name('pengguna');
 Route::get('/tambahpengguna', [PenggunasController::class, 'tambahpengguna'])->name('tambahpengguna');
@@ -65,7 +65,7 @@ Route::get('/ubahpengguna/{id_pengguna}', [PenggunasController::class, 'ubahpeng
 Route::post('/updatedata3/{id_pengguna}', [PenggunasController::class, 'updatedata3'])->name('updatedata3');
 Route::get('/deletepengguna/{id_pengguna}', [PenggunasController::class, 'deletepengguna'])->name('deletepengguna');
 Route::get('/deleteAll1', [PenggunasController::class, 'deleteAll1'])->name('deleteAll1');
-
+Route::get('/eksporpengguna', [PenggunasController::class, 'eksporpengguna'])->name('eksporpengguna');
 
 Route::get('/terminal', [TerminalsController::class, 'index'])->name('terminal');
 Route::get('/tambahterminal', [TerminalsController::class, 'tambahterminal'])->name('tambahterminal');
@@ -74,7 +74,7 @@ Route::get('/ubahterminal/{id_terminal}', [TerminalsController::class, 'ubahterm
 Route::post('/updatedata4/{id_terminal}', [TerminalsController::class, 'updatedata4'])->name('updatedata4');
 Route::get('/deleteterminal/{id_terminal}', [TerminalsController::class, 'deleteterminal'])->name('deleteterminal');
 Route::get('/deleteAll3', [TerminalsController::class, 'deleteAll3'])->name('deleteAll3');
-
+Route::get('/eksporterminal', [TerminalsController::class, 'eksporterminal'])->name('eksporterminal');
 
 Route::get('/bus', [BussController::class, 'index'])->name('bus');
 Route::get('/tambahbus', [BussController::class, 'tambahbus'])->name('tambahbus');
@@ -83,3 +83,4 @@ Route::get('/ubahbus/{id_bus}', [BussController::class, 'ubahbus'])->name('ubahb
 Route::post('/updatedata2/{id_bus}', [BussController::class, 'updatedata2'])->name('updatedata2');
 Route::get('/deletebus/{id_bus}', [BussController::class, 'deletebus'])->name('deletebus');
 Route::get('/deleteAll', [BussController::class, 'deleteAll'])->name('deleteAll');
+Route::get('/eksporbus', [BussController::class, 'eksporbus'])->name('eksporbus');

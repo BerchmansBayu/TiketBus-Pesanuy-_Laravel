@@ -50,17 +50,17 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
+        <li>
         <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-
 <a href="{{ route('actionlogout') }}"
    onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">
-    Logout
+             <i class="ri-logout-circle-line"></i>
+    <span>Logout</span>
 </a>
-        </li>
+</li>
     </ul>
 </div>
 
@@ -82,7 +82,7 @@
                 
                 <a class="btn btn-danger" href="deleteAll3">Wipe Data</a>
                 <a class="btn btn-primary" href="tambahterminal">Add Data</a>
-              
+                <a class="btn btn-success" href="eksporterminal">Print Data</a>
                 <table>
                     <thead>
                         <tr>

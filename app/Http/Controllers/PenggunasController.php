@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Pengguna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class PenggunasController extends Controller
 {
@@ -80,6 +81,18 @@ class PenggunasController extends Controller
         
     	// mengirim data pegawai ke view index
     	return redirect()->route('pengguna');
+ 
+    }
+
+    public function eksporpengguna()
+    {
+    	// mengambil data dari table pegawai
+        $pengguna = Pengguna::all();
+        view()->share('pengguna',$pengguna);
+        $pdf = PDF::loadview('layout/datapengguna-pdf');
+        return $pdf->download('pengguna.pdf');
+    	// mengirim data pegawai ke view index
+    	
  
     }
 }

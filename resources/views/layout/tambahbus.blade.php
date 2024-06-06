@@ -8,6 +8,7 @@
     <!--=== CSS ===-->
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <title>Dashboard Admin</title>
+    
 </head>
 <body>
 
@@ -50,16 +51,16 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
-        <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
-
-<a href="{{ route('actionlogout') }}"
-   onclick="event.preventDefault();
-             document.getElementById('logout-form').submit();">
-    Logout
-</a>
+        <li>
+            <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <a href="{{ route('actionlogout') }}"
+               onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+                <i class="ri-logout-circle-line"></i>
+                <span>Logout</span>
+            </a>
         </li>
     </ul>
 </div>
@@ -79,28 +80,31 @@
             <h3 class="main_title">Data Bus</h3>
             <div class="table_container">
                 
-                
-            <form action="/insertdata2" method="post" enctype="multipart/form-data">
-        @csrf
-                        <table>
-                            <tr>
-                                <td>Nama Bus</td>
-                                <td><input type="text" name="nama_bus"></td>
-                            </tr>
-                            <tr>
-                                <td>Kelas Bus</td>
-                                <td><input type="text" name="kelas_bus"></td>
-                            </tr>
-                            <tr>
-                                <td>Jumlah Kursi</td>
-                                <td><input type="text" name="jumlah_kursi"></td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td><input type="submit" value="SIMPAN"></td>
-                            </tr>
-                        </table>
-                    </form>
+                <div class="form-container"> 
+                    <div class="col-sm-12"> 
+                        <form action="/insertdata2" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <table>
+                                <tr>
+                                    <td>Nama Bus</td>
+                                    <td><input type="text" name="nama_bus"></td>
+                                </tr>
+                                <tr>
+                                    <td>Kelas Bus</td>
+                                    <td><input type="text" name="kelas"></td>
+                                </tr>
+                                <tr>
+                                    <td>Jumlah Kursi</td>
+                                    <td><input type="text" name="jumlah_kursi"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><input type="submit" value="SIMPAN" class="btn-minimalist-blue"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div> 
+                </div> 
             </div>
         </div>
     </div>

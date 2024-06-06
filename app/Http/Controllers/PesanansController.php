@@ -78,7 +78,18 @@ class PesanansController extends Controller
  
     }
 
-    
+    public function eksporpesanan()
+    {
+    	// mengambil data dari table pegawai
+        $pesanan = Pesanan::with('Rute')->get();
+        $pesanan = Pesanan::with('Pengguna')->get();
+        view()->share('pesanan',$pesanan);
+        $pdf = PDF::loadview('layout/datapesanan-pdf');
+        return $pdf->download('pesanan.pdf');
+    	// mengirim data pegawai ke view index
+    	
+ 
+    }
 
     public function deleteAll4()
     {

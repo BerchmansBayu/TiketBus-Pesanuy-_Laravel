@@ -50,17 +50,17 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
+        <li>
         <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-
 <a href="{{ route('actionlogout') }}"
    onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">
-    Logout
+             <i class="ri-logout-circle-line"></i>
+    <span>Logout</span>
 </a>
-        </li>
+</li>
     </ul>
 </div>
 
@@ -80,40 +80,43 @@
             <div class="table_container">
                 
                 
-            @foreach($pengguna as $user)
-                <form action="/updatedata3/{{$user->id_pengguna}}" method="post">
+            <div class="form-container"> 
+            <div class="col-sm-12"> 
+                <form action="/updatedata3/{{$pengguna->id_pengguna}}" method="post">
             @csrf
                     <table>
                         <tr>			
                             <td>Nama Pengguna</td>
                             <td>
-                                <input type="text" name="nama_pengguna" value="{{ $user->nama_pengguna }}">
+                                <input type="text" name="nama_pengguna" value="{{ $pengguna->nama_pengguna }}">
                             </td>
                         </tr>
                         <tr>			
                             <td>Email</td>
-                            <td><input type="email" name="email_pengguna" value="{{ $user->email_pengguna }}"></td>
+                            <td><input type="email" name="email_pengguna" value="{{ $pengguna->email_pengguna }}"></td>
                         </tr>
                         <tr>
                             <td>Password</td>
-                            <td><input type="password" name="password" value="{{ $user->password }}"></td>
+                            <td><input type="password" name="password" value="{{ $pengguna->password }}"></td>
                         </tr>
                         <tr>
                             <td>Level</td>
                             <td>
                                 <select name="level">
-                                    <option value="Admin" {{ $user->level == 'Admin' ? 'selected' : '' }}>Admin</option>
-                                    <option value="Pengguna" {{ $user->level == 'Pengguna' ? 'selected' : '' }}>Pengguna</option>
+                                    <option value="Admin" {{ $pengguna->level == 'Admin' ? 'selected' : '' }}>Admin</option>
+                                    <option value="Pengguna" {{ $pengguna->level == 'Pengguna' ? 'selected' : '' }}>Pengguna</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="UBAH DATA"></td>
+                            <td><input type="submit" value="UBAH DATA" class="btn-minimalist-blue"></td>
                         </tr>		
                     </table>
                 </form>
-                @endforeach
+                </div>
+                </div>
+               
             </div>
         </div>
     </div>

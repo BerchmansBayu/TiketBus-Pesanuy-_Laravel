@@ -50,17 +50,17 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
+        <li>
         <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-
 <a href="{{ route('actionlogout') }}"
    onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">
-    Logout
+             <i class="ri-logout-circle-line"></i>
+    <span>Logout</span>
 </a>
-        </li>
+</li>
     </ul>
 </div>
 
@@ -79,7 +79,7 @@
             <h3 class="main_title">Data Bus</h3>
             <div class="table_container">
                 
-                
+            <a class="btn btn-success" href="eksporbus">Print Data</a>
                 <a class="btn btn-danger" href="deleteAll">Wipe Data</a>
                 <a class="btn btn-primary" href="tambahbus">Add Data</a>
                 
@@ -100,7 +100,7 @@
                             <td>{{ $bus->jumlah_kursi }}</td>
                             <td>
                             <a type="button" class="btn btn-warning" href="/ubahbus/{{$bus->id_bus}}">Edit</a>
-                            <a type="button" class="btn btn-danger" href="/deletebus/{{$bus->id_bus}}">Delete</a>
+                            <a type="button" class="btn btn-danger" href="#" onclick="confirmDelete({{ $bus->id_bus }})">Delete</a>
                             </td>
                         </tr>
                         @endforeach
@@ -113,6 +113,24 @@
 </main>
 
 <script src="{{ asset('js/dashboard.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+    function confirmDelete(busId) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "Apakah ingin menghapus data ini?",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus Saja!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = '/deletebus/' + busId;
+            }
+        });
+    }
+</script>
 
 </body>
 </html>

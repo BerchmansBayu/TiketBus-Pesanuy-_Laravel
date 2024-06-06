@@ -51,10 +51,12 @@
             </a>
         </li>
         <li class="logout">
-            <a href="actionlogout">
-                <i class="ri-logout-circle-line"></i>
-                <span>Exit</span>
-            </a>
+        <i class="ri-logout-circle-line">Logout
+<a href="{{ route('actionlogout') }}"
+   onclick="event.preventDefault();
+             document.getElementById('logout-form').submit();">
+</a>
+</i>
         </li>
     </ul>
 </div>

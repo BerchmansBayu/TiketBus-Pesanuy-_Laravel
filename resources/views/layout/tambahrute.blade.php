@@ -50,17 +50,17 @@
                 <span>Pesan</span>
             </a>
         </li>
-        <li class="logout">
+        <li>
         <form id="logout-form" action="{{ route('actionlogout') }}" method="POST" style="display: none;">
     @csrf
 </form>
-
 <a href="{{ route('actionlogout') }}"
    onclick="event.preventDefault();
              document.getElementById('logout-form').submit();">
-    Logout
+             <i class="ri-logout-circle-line"></i>
+    <span>Logout</span>
 </a>
-        </li>
+</li>
     </ul>
 </div>
 
@@ -79,7 +79,8 @@
             <h3 class="main_title">Data Rute</h3>
             <div class="table_container">
                 
-                
+            <div class="form-container"> 
+            <div class="col-sm-12"> 
             <form action="/insertdata1" method="post" enctype="multipart/form-data">
     @csrf
                     <table>
@@ -127,10 +128,12 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><input type="submit" value="SIMPAN"></td>
+                            <td><input type="submit" value="SIMPAN" class="btn-minimalist-blue"></td>
                         </tr>
                     </table>
                 </form>
+                </div>
+                </div>
             </div>
         </div>
     </div>
