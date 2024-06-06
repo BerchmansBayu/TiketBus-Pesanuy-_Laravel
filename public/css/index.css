@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+--primary-color: #3d5cb8;
+--primary-color-dark: #334c99;
+--text-dark: #0f172a;
+--text-light: #64748b;
+--extra-light: #f1f5f9;
+--white: #ffff;
+--max-width: 1200px;
+}
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+.btn{
+    padding: .75rem 2rem;
+    outline:none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color:var(--white);
+    background-color: var(--primary-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover{
+    background-color: var(--primary-color-dark);
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+    display: block; /* Menggunakan display: block; untuk menghindari masalah dengan flexbox */
+    margin-left: auto; /* Memastikan posisi gambar di tengah secara horizontal */
+    margin-right: auto;
+}
+body{
+    font-family:'Poppins', sans-serif;
+}
+.nav_logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:var(--text-dark)
+}
+.section_header{
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3rem;
+    color: var(--text-dark);
+}
+.section_container{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 5rem 1rem;
+}
+nav{
+    max-width: var(--max-width);
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.header_container .section_header{
+    text-align: center;
+    font-size: 3rem;
+    line-height: 4rem;
+}
+.booking_container{
+    border-radius: 2rem;
+    border: 1px solid var(--extra-light);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+}
+.booking_nav{
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: var(--extra-light);
+    border-radius: 5px;
+}
+.booking_nav span{
+    flex:1;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    color: var(--text-light);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.booking_container form{
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(4,1fr) auto;
+    gap: 1rem;
+}
+.booking_container .input_content{
+    width: 100%;
+}
+.booking_container .form_group{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.booking_container .form_group span{
+    padding: 10px;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    background-color: var(--text-light);
+    border-radius: 1rem;
+}
+.booking_container .input_group{
+    width: 100%;
+    position:relative;
+}
+.booking_container label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color:var(--text-dark);
+    pointer-events: none;
+    transition: 0.3s;
+}
+.booking_container input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--text-dark);
+}
+.booking_container input:focus ~ label{
+    font-size: 0.8rem;
+    top:0
+}
+.booking_container .form_group p{
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+.booking_container .btn{
+    padding:1rem;
+    font-size: 1.5rem;
+}
+
+  @media(width < 900px){
+    .header_container img {
+        min-width: none;
+        width: 100%; /* Untuk mengatur lebar gambar */
+        margin-left: auto;
+        margin-right: auto;
+        display: block; /* Memastikan gambar berada di tengah */
+    }
+    nav.btn{
+        display: inline-block
+    }
+    .booking_container form{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+  .carousel {
+    position: relative;
+    text-align: center; /* Mengatur gambar agar berada di tengah horizontal */
+}
+
+
+.carousel-buttons {
+    position: absolute;
+    bottom: 10px; /* Atur jarak dari bawah sesuai kebutuhan */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+.popup-content button{
+    color:green;
+    background: none;
+    cursor: pointer;
+}
+
+.popup-content button {
+    background-color: transparent; /* Menghapus kotak hitam di sekitar teks */
+    color: var(--primary-color); /* Warna teks biru */
+    border: 2px solid var(--primary-color); /* Menambahkan border biru */
+    width: 100%; /* Tombol memenuhi lebar container */
+    max-width: 200px; /* Maksimum lebar tombol */
+    margin: 0 auto; /* Tombol berada di tengah */
+}
+
+.popup-content button {
+    background-color: var(--primary-color); /* Warna latar belakang biru tua saat tombol dihover */
+    color: var(--white); /* Warna teks putih saat tombol dihover */
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+body {
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font Montserrat untuk seluruh teks */
+}
+
+h3 {
+    margin-bottom: 1rem; /* Berikan jarak bawah untuk setiap judul h3 */
+}
+
+thead{
+    background: rgb(30, 144, 255);
+    color: #fff;
+}
+th{
+    padding: 15px;
+    text-align: left;
+}
+tbody{
+    background: #f2f2f2;
+}
+td{
+    padding: 15px;
+    font-size: 14px;
+    color: #333;
+}
+tr:nth-child(even){
+    background: #fff;
+}
+
+.booking_container {
+    max-width: 1000px; /* Menyesuaikan lebar maksimum form */
+    margin: auto;
+    padding: 5rem 1rem;
+}
+
+.close {
+    color: var(--text-dark); /* Warna ikon tombol close hitam */
+}
+
+.close:hover,
+.close:focus {
+    color: var(--primary-color-dark); /* Warna ikon tombol close biru tua saat dihover */
+}
+
+

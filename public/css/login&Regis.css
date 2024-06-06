@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4070f4;
+}
+
+.container {
+    position: relative;
+    max-width: 300px; /* Adjust as needed for desired overall width */
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .form {
+    padding: 20px; /* Adjust as needed for padding within the container */
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px; /* Adjust as needed for spacing below the header */
+}
+
+.logo-wrapper {
+    margin-bottom: 20px; /* Adjust as needed for spacing below the logo */
+}
+
+.logo {
+    width: 60px; /* Adjust as needed for logo width */
+    height: 60px; /* Adjust as needed for logo height */
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    margin-right: 0px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(360deg);
+}
+
+.container .form .title {
+    position: relative;
+    font-size: 20px; /* Adjust as needed for title font size */
+    font-weight: 600;
+}
+
+.form .input-field {
+    position: relative;
+    height: 40px; /* Adjust as needed for input field height */
+    width: 100%;
+    margin-top: 20px; /* Adjust as needed for spacing between input fields */
+    display: flex;
+    align-items: center;
+}
+
+.input-field input {
+    flex: 1;
+    height: 100%;
+    padding-left: 35px;
+    border: none;
+    outline: none;
+    font-size: 14px; /* Adjust as needed for input font size */
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+    border-bottom-color: #4070f4;
+}
+
+.input-field i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px; /* Adjust as needed for icon size */
+    color: #999;
+    margin-right: 10px;
+}
+
+.input-field input:is(:focus, :valid) ~ i {
+    color: #4070f4;
+}
+
+.input-field i.icon {
+    left: 0;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    }
+    
+    .logo-wrapper {
+    margin-bottom: 20px;
+    }
+    
+    .logo {
+    width: 80px;
+    height: 80px;
+     border-radius: 50%;
+     border: 3px solid #007bff;
+     margin-right: 0px;
+     transition: transform 0.3s ease;
+    }
+    
+    .logo:hover {
+    transform: rotate(360deg);
+    }
+
+.form .checkbox-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px; /* Adjust as needed for spacing above the checkbox */
+}
+
+.checkbox-text .checkbox-content {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input {
+    margin: 0 8px -2px 4px;
+    accent-color: #4070f4;
+}
+
+.form .text {
+    color: #333;
+    font-size: 12px; /* Adjust as needed for text font size */
+}
+
+.form .button {
+    margin-top: 20px; /* Adjust as needed for spacing above the button */
+    width: 100%; /* Menambahkan lebar 100% untuk .button */
+}
+
+.form .button input {
+    width: 100%; /* Menambahkan lebar 100% untuk tombol */
+    border: none;
+    color: #fff;
+    font-size: 14px; /* Adjust as needed for button font size */
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+}
+
+.button input:hover {
+    background-color: #265df2;
+}
+
+.form .login-signup {
+    margin-top: 30px; /* Adjust as needed for spacing below the login/signup link */
+    text-align: center;
+}
+
+.form a.text {
+    color: #4070f4;
+    text-decoration: none;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer-text {
+    color: #777;
+    font-size: 14px;
+}
+.popup-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.popup-box h2 {
+    color: #4070f4;
+    margin-bottom: 20px;
+}
+
+.popup-box p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
